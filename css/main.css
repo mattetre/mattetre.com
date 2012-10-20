@@ -1,0 +1,254 @@
+@import url('fonts.css');
+
+/* ========================================================================
+   Styles
+   ========================================================================== */
+
+body {
+    /*font-family: "Lato", "helvetica neue", "helvetica", sans-serif;*/
+    font-family: "Lato", sans-serif;
+	background: url('../images/background_14.jpg') no-repeat center center fixed;
+	-webkit-background-size: cover;
+	   -moz-background-size: cover;
+	     -o-background-size: cover;
+		    background-size: cover;
+	/*
+    background-size: 100% 100%;
+    */
+    background-repeat: no-repeat;
+	color: #fff;
+}
+
+.wrapper {
+    width: 95%;
+    margin: 0 5%;
+}
+
+
+/* ==============
+   Header Info
+   ============== */
+
+header {
+	background-color: rgba(0,0,0, 0.7);
+	margin: 		  .5em 0 2em;
+    padding: 		  .5em;
+	position: 		  relative;
+}
+
+	header .title {
+		color: 		 #759CBF;
+	 	float: 		 left;
+	    font-size:   3em;
+ 	    font-family: 'Lobster Two', 'Lato';
+	}
+
+/* ==============
+   Navigation
+   ============== */
+
+nav {
+	float:   right;
+	margin:  2em 3em 0;
+}
+	nav ul {
+	    margin:  0;
+	    padding: 0;
+	}
+	
+	nav a {
+		color: 			 #759CBF;
+		display: 		 inline;
+  		font-size: 		 1.1em;
+ 	    font-family: 	 'Lato';
+		padding: 		 0em 1em;
+ 		text-align:      center;
+    	text-decoration: none;
+     	text-transform:  uppercase;
+	}
+	
+	nav a:hover,
+	nav a:visited {
+/*	    color: white;*/
+	}
+	
+	nav a:hover {
+	    text-decoration: none;
+	}
+	
+	/* Highlight the selected Navigation link */
+	/*body.about a.nav-about,
+	body.contact a.nav-contact,
+	body.blog a.nav-blog,
+	body.projects a.nav-projects {
+		border-radius: 5px;
+		box-shadow: 0px 2px 0px rgba(117,156,191 .9);
+	}
+	*/
+	nav a.selected {
+		border-radius: 5px;
+		box-shadow: 0px 2px 0px rgba(117,156,191 .9);
+	}
+	
+
+/* ==============
+   Main
+   ============== */
+
+.main {
+	
+	background-color: 	   rgba(0,0,0, .8);
+ 	-webkit-border-radius: 2px;
+	   -moz-border-radius: 2px;
+		    border-radius: 2px;
+         	      
+}
+	
+	.main section {
+		margin: 0 0 2em;
+	}
+	
+	.main article {
+	    padding: 0em 1em;
+	}
+
+	.main article h2 {
+	    color: 	   		#759CBF;
+	    font-size: 		1.3em;
+	    text-transform: capitalize;
+	}
+	
+	.main article p {
+	    padding: 0 1em;
+	}
+	
+	.main article ul {
+		margin: 0;
+		list-style: none;
+	}
+	
+	.main article a, a:hover, a:visited {
+    	text-decoration: none;
+	}
+	
+	.main aside {
+	    padding: 0px 5% 10px;
+	}
+	
+	.main aside h3 {
+	    color: #759CBF;
+	}
+	.main aside p {
+		font-size: 1em;
+	    color:   #fff;		
+	}
+	
+/* ==============
+   Footer
+   ============== */
+	
+.footer-container {
+    margin: 0 auto;
+}
+
+footer {
+    color: white;
+}
+
+
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+@media only screen and (min-width: 480px) {
+
+/* ====================
+    INTERMEDIATE: Menu
+   ==================== */
+
+    nav a {
+        margin-bottom: 0;
+    }
+
+    nav li:first-child a {
+        margin-left: 0;
+    }
+
+    nav li:last-child a {
+        margin-right: 0;
+    }
+
+/* ========================
+    INTERMEDIATE: IE Fixes
+   ======================== */
+
+    nav ul li {
+        display: inline;
+    }
+
+    .oldie nav a {
+        margin: 0 0.7%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+
+/* ====================
+    WIDE: CSS3 Effects
+   ==================== */
+
+    .header-container,
+    .main aside {
+    	/*
+        -webkit-box-shadow: 0 5px 10px #aaa;
+           -moz-box-shadow: 0 5px 10px #aaa;
+                box-shadow: 0 5px 10px #aaa;
+                */
+    }
+
+
+
+/* ============
+    WIDE: Main
+   ============ */
+
+    .main article {
+        float: left;
+        width: 57%;
+    }
+
+    .main aside {
+        float: right;
+        width: 28%;
+    }
+}
+
+@media only screen and (min-width: 1140px) {
+
+/* ===============
+    Maximal Width
+   =============== */
+
+    .wrapper {
+        width: 1026px; /* 1140px - 10% for margins */
+        margin: 0 auto;
+    }
+}
+
+/* ==========================================================================
+   Helper clases
+   ========================================================================== */
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
