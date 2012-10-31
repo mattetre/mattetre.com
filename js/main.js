@@ -1,18 +1,17 @@
-/*
- * Common javascript functionality used on multiple pages
- */
 (function() {
-	
-	var DYNAMIC_CONTENT_DIV_CLASS = "dynamic-content";
-	var NAV_SELECTED_CLASS = "selected";
+	// Constants
+	var CONSTANT_CLASSES = {
+		dynamic_content_div : 'dynamic-content',
+		nav_selected : 'selected'
+	}
 
+	// setup History.js library to handle ajax history states 
 	var History = window.History;
 	History.Adapter.bind(window,'statechange',function(){ // Note: We are using statechange instead of popstate
         var State = History.getState(); // Note: We are using History.getState() instead of event.state
         History.log(State.data, State.title, State.url);
     });
-
-
+	
 	
 	// setup navigation link click handlers
 	$(".nav-item").click(function() {
@@ -21,42 +20,57 @@
 		if (!isNavSelected($this)) {
 			console.debug(path);
 			// set the current page to not selected
-			toggleNavSelected($('.' + NAV_SELECTED_CLASS));
+			toggleNavSelected($('.' + CONSTANT_CLASSES.nav_selected));
 			// set new item to selected
+			toggleNavSelected($this);
+			// load the dynamic content
 			loadDynamicContent(path);
 		}
 		return false;
 	});
 	
+	
+	/**
+	 * Load dynamic content in the DYNAMIC_CONTENT_DIV_CLASS div
+	 * @param {String} path URL path to get html data from
+	 */
 	function loadDynamicContent(path) {
-		var destination = $('.' + DYNAMIC_CONTENT_DIV_CLASS);
+		var destination = $('.' + CONSTANT_CLASSES.dynamic_content_div);
 		loadPathToDestination(path, destination);
 	}
 
 	/**
 	 * Load dynamic content at URL location
-	 * @param path URL path to get html data from
-	 * @param destination Jquery object destination to place result
+	 * @param {String} path URL path to get html data from
+	 * @param {Object} destination jQuery object destination to place result
 	 */
 	function loadPathToDestination(path, destination) {
 		var state = 1;
 		if (path.indexOf('contact') != -1) {
 			state = 2;
 		}
-	    History.pushState({state:state}, "State 1", '?'+path); // logs {state:1}, "State 1", "?state=1"
+	    //History.pushState({state:state}, "State 1", '?'+path); // logs {state:1}, "State 1", "?state=1"
 		destination.load(path).hide().fadeIn();
 	}
 	
+	/**
+	 * Toggle a navigation items selected state 
+	 * @param {Object} navItem jQuery object to toggle selected state
+	 */
 	function toggleNavSelected(navItem) {
 		if (isNavSelected(navItem)) {
-			navItem.removeClass(NAV_SELECTED_CLASS);
+			navItem.removeClass(CONSTANT_CLASSES.nav_selected);
 		} else {
-			navItem.addClass(NAV_SELECTED_CLASS);
+			navItem.addClass(CONSTANT_CLASSES.nav_selected);
 		}
 	}
 	
+	/**
+	 * Check if the navigation item is selected 
+	 * @param {Object} navItem jQuery navigation item to check
+	 */
 	function isNavSelected(navItem) {
-		return navItem.hasClass(NAV_SELECTED_CLASS);
+		return navItem.hasClass(CONSTANT_CLASSES.nav_selected);
 	}
   
 })();

@@ -76,15 +76,6 @@ nav {
 	    text-decoration: none;
 	}
 	
-	/* Highlight the selected Navigation link */
-	/*body.about a.nav-about,
-	body.contact a.nav-contact,
-	body.blog a.nav-blog,
-	body.projects a.nav-projects {
-		border-radius: 5px;
-		box-shadow: 0px 2px 0px rgba(117,156,191 .9);
-	}
-	*/
 	nav a.selected {
 		border-radius: 5px;
 		box-shadow: 0px 2px 0px rgba(117,156,191 .9);
