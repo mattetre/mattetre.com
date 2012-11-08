@@ -94,6 +94,9 @@ nav {
 		    border-radius: 2px;
          	      
 }
+	/**
+	 * 	Main article content
+	 */
 	
 	.main section {
 		margin: 0 0 2em;
@@ -122,16 +125,31 @@ nav {
     	text-decoration: none;
 	}
 	
+	/* used for page under construction */
+	.main article .construction {
+		font-size: 1.5em;
+		margin: 2em;
+	}
+	
+	
+	/**
+	 * 	Main aside
+	 */
+	
 	.main aside {
 	    padding: 0px 5% 10px;
 	}
 	
 	.main aside h3 {
 	    color: #759CBF;
+	    text-transform: capitalize;
 	}
 	.main aside p {
 		font-size: 1em;
 	    color:   #fff;		
+	}
+	.main aside span {
+		text-transform: capitalize;
 	}
 	
 /* ==============
@@ -146,6 +164,17 @@ footer {
     color: white;
 }
 
+
+/* ==========================================================================
+   Page specific styles
+   ========================================================================== */
+
+/* ==============
+   Conact
+   ============== */
+  
+  
+	
 
 
 /* ==========================================================================

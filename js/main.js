@@ -1,33 +1,39 @@
+/**
+ * main.js
+ * 
+ * Used on the index page to setup dynamic linking 
+ */
 (function() {
+	
 	// Constants
 	var CONSTANT_CLASSES = {
 		dynamic_content_div : 'dynamic-content',
 		nav_selected : 'selected'
 	}
 
-	// setup History.js library to handle ajax history states 
-	var History = window.History;
-	History.Adapter.bind(window,'statechange',function(){ // Note: We are using statechange instead of popstate
-        var State = History.getState(); // Note: We are using History.getState() instead of event.state
-        History.log(State.data, State.title, State.url);
-    });
-	
-	
+	// load up the about me page on first load
+	toggleAndLoadItem($('.nav-about'));
+
 	// setup navigation link click handlers
 	$(".nav-item").click(function() {
 		var $this = $(this);
-		var path = $this.attr("href");
-		if (!isNavSelected($this)) {
+		toggleAndLoadItem($this);
+		
+		return false;
+	});
+	
+	function toggleAndLoadItem($item) {
+		var path = $item.attr("href");
+		if (!isNavSelected($item)) {
 			console.debug(path);
 			// set the current page to not selected
 			toggleNavSelected($('.' + CONSTANT_CLASSES.nav_selected));
 			// set new item to selected
-			toggleNavSelected($this);
+			toggleNavSelected($item);
 			// load the dynamic content
 			loadDynamicContent(path);
 		}
-		return false;
-	});
+	}
 	
 	
 	/**
@@ -45,11 +51,6 @@
 	 * @param {Object} destination jQuery object destination to place result
 	 */
 	function loadPathToDestination(path, destination) {
-		var state = 1;
-		if (path.indexOf('contact') != -1) {
-			state = 2;
-		}
-	    //History.pushState({state:state}, "State 1", '?'+path); // logs {state:1}, "State 1", "?state=1"
 		destination.load(path).hide().fadeIn();
 	}
 	

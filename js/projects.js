@@ -10,10 +10,20 @@
 			githubLoading.fadeOut(function() {
 				for (var i in data) {
 					var repo = data[i];
+					// create repo link
 					var repoLink = $('<a>', {href: repo.html_url, text: repo.name, target: 'new'});
-					var listItem = $('<li>');
-					repoLink.appendTo(listItem);
-					listItem.appendTo(githubList);
+					var repoListItem = $('<li>')
+						.append(repoLink);
+
+					// create description <li>
+					var repoDescItem = $('<ul>')
+						.append($('<li>'))
+						.append(repo.description);
+					
+					// add the repo link and description to the list
+					githubList
+						.append(repoListItem)
+						.append(repoDescItem);
 				}
 			})
 		} else {
