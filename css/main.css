@@ -78,7 +78,7 @@ nav {
 	
 	nav a.selected {
 		border-radius: 5px;
-		box-shadow: 0px 2px 0px rgba(117,156,191 .9);
+		box-shadow: 0px 2px 0px rgba(117,156,191, .9);
 	}
 	
 
