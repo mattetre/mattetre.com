@@ -11,6 +11,12 @@
         <link rel="stylesheet" href="css/main.css">
 
         <script src="js/vendor/modernizr-2.6.1-respond-1.1.0.min.js"></script>
+        
+        <script src="js/vendor/jquery-1.8.1.min.js"></script>
+		<script src="js/vendor/underscore.js"></script>
+		<script src="js/vendor/backbone.js"></script>
+
+
     </head>
     
     <body class="index">
@@ -18,10 +24,10 @@
             <div class="title">mattetre.com</div>
             <nav>
                 <ul>
-                    <li><a href="static/projects.html" class="nav-item nav-projects">projects</a></li>
-                    <li><a href="static/blog.html" class="nav-item nav-blog">blog</a></li>
-                    <li><a href="static/about.html" class="nav-item nav-about">about</a></li>
-                    <li><a href="static/contact.html" class="nav-item nav-contact">contact</a></li>
+                    <li><a href="#!page/projects.html" class="nav-item nav-projects">projects</a></li>
+                    <li><a href="#!page/blog.html" class="nav-item nav-blog">blog</a></li>
+                    <li><a href="#!page/about.html" class="nav-item nav-about">about</a></li>
+                    <li><a href="#!page/contact.html" class="nav-item nav-contact">contact</a></li>
                 </ul>
             </nav>
         </header>
@@ -29,15 +35,12 @@
         <div class="main-container">
             <div class="main wrapper clearfix">
             	
-				<div class="dynamic-content">
-					<section>
-						<h2>about me</h2>
-						<p>
-							My name is Matt Etre and I currently live in Boston.
-							I am a software engineer at NetApp.
-							I graduated from Northeastern University with a degree in Computer Science.
-						</p>
-					</section>
+				<div id="dynamic-content">
+					
+					whattt
+					<?php 
+						//@ include ("static/about.html");
+					?>
 					<!-- dynamic div that will be populated using javascript -->	
 				</div>
 
@@ -66,8 +69,8 @@
     </body>
 </html>
 
+<script src="js/app/contentview.js"></script>
+<script src="js/app/app.js"></script>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.1.min.js"><\/script>')</script>
-<script src="js/jquery.history.js"></script>
-<script src="js/main.js"></script>
+
+
