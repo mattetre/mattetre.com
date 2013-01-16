@@ -36,12 +36,19 @@
             <div class="main wrapper clearfix">
             	
 				<div id="dynamic-content">
-					
-					whattt
-					<?php 
-						//@ include ("static/about.html");
+					<?php
+					  // get the _escaped_fragment_ parameter
+					  $escapedfragment = $_GET['_escaped_fragment_'];
+					  // if the escaped fragment is set then load up static page in PHP
+					  if (isset($escapedfragment)) {
+					  	include($escapedfragment);
+					  } else {
+					  	// Otherwise use javascript to load and interact with page
+						echo("<script src='js/app/contentview.js'></script>");
+						echo("<script src='js/app/app.js'></script>");
+					  }
 					?>
-					<!-- dynamic div that will be populated using javascript -->	
+	
 				</div>
 
                 <aside>
@@ -68,9 +75,6 @@
 
     </body>
 </html>
-
-<script src="js/app/contentview.js"></script>
-<script src="js/app/app.js"></script>
 
 
 

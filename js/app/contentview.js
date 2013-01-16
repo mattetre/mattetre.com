@@ -9,7 +9,7 @@ ContentView = Backbone.View.extend({
 		var that = this;
 		
 		// download the template from the template directory
-    	$.get("templates/" + path, function(template){
+    	$.get("page/" + path, function(template){
     		// set the el to the downloaded template
       		that.$el.html(template);
     	});
