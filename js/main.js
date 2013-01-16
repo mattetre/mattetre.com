@@ -12,7 +12,7 @@
 	}
 
 	// load up the about me page on first load
-	toggleAndLoadItem($('.nav-about'));
+	//toggleAndLoadItem($('.nav-about'));
 
 	// setup navigation link click handlers
 	$(".nav-item").click(function() {
