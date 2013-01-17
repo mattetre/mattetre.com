@@ -16,7 +16,7 @@
 		<script src="js/vendor/underscore.js"></script>
 		<script src="js/vendor/backbone.js"></script>
 
-		<link rel="icon" href="favicon.ico" type="image/x-icon" />
+		<link rel="icon" href="mattetre.com/favicon.ico" type="image/x-icon" />
 
     </head>
     
@@ -58,8 +58,6 @@
                     <br>
                     <span>todo:</span>
                     <ul class="todo">
-                    	<li>Setup functional browser history when using ajax calls to load pages</li>
-                    	<li>Setup bookmarkable and crawlable links</li>
                     	<li>Make web page responsive and viewable on mobile devices</li>
                     	<li>Create a simple blogging system</li>
                     </ul>
