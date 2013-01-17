@@ -16,6 +16,7 @@
 		<script src="js/vendor/underscore.js"></script>
 		<script src="js/vendor/backbone.js"></script>
 
+		<link rel="icon" href="favicon.ico" type="image/x-icon" />
 
     </head>
     
