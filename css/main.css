@@ -3,6 +3,9 @@
 /* ========================================================================
    Styles
    ========================================================================== */
+html {
+	height: 100%;
+}
 
 body {
     /*font-family: "Lato", "helvetica neue", "helvetica", sans-serif;*/
@@ -15,13 +18,9 @@ body {
 	/*
     background-size: 100% 100%;
     */
+    height: 100%;
     background-repeat: no-repeat;
 	color: #fff;
-}
-
-.wrapper {
-    width: 95%;
-    margin: 0 5%;
 }
 
 
@@ -36,12 +35,12 @@ header {
 	position: 		  relative;
 }
 
-	header .title {
-		color: 		 #759CBF;
-	 	float: 		 left;
-	    font-size:   3em;
- 	    font-family: 'Lobster Two', 'Lato';
-	}
+header .title {
+	color: 		 #759CBF;
+ 	float: 		 left;
+    font-size:   3em;
+    font-family: 'Lobster Two', 'Lato';
+}
 
 /* ==============
    Navigation
@@ -49,37 +48,42 @@ header {
 
 nav {
 	float:   right;
-	margin:  2em 3em 0;
+	margin-top: 2em;
+	/*(margin:  2em 3em 0;*/
 }
-	nav ul {
-	    margin:  0;
-	    padding: 0;
-	}
-	
-	nav a {
-		color: 			 #759CBF;
-		display: 		 inline;
-  		font-size: 		 1.1em;
- 	    font-family: 	 'Lato';
-		padding: 		 0em 1em;
- 		text-align:      center;
-    	text-decoration: none;
-     	text-transform:  uppercase;
-	}
-	
-	nav a:hover,
-	nav a:visited {
+nav ul {
+    margin:  0;
+    padding: 0;
+}
+
+nav li {
+	display: inline;
+}
+
+nav a {
+	color: 			 #759CBF;
+	display: 		 inline-block;
+	font-size: 		 1.1em;
+    font-family: 	 'Lato';
+	padding: 		 0em 1em;
+	text-align:      center;
+	text-decoration: none;
+ 	text-transform:  uppercase;
+}
+
+nav a:hover,
+nav a:visited {
 /*	    color: white;*/
-	}
-	
-	nav a:hover {
-	    text-decoration: none;
-	}
-	
-	nav a.selected {
-		border-radius: 5px;
-		box-shadow: 0px 2px 0px rgba(117,156,191, .9);
-	}
+}
+
+nav a:hover {
+    text-decoration: none;
+}
+
+nav a.selected {
+	border-radius: 5px;
+	box-shadow: 0px 2px 0px rgba(117,156,191, .9);
+}
 	
 
 /* ==============
@@ -87,70 +91,81 @@ nav {
    ============== */
 
 .main {
-	
+
 	background-color: 	   rgba(0,0,0, .8);
  	-webkit-border-radius: 2px;
 	   -moz-border-radius: 2px;
 		    border-radius: 2px;
-         	      
+   
+	width: 90%;
+	min-height: 500px;
+	margin: 0 auto; 
 }
-	/**
-	 * 	Main article content
-	 */
-	
-	.main section {
-		margin: 0 0 2em;
-	}
-	
-	.main article {
-	    padding: 0em 1em;
-	}
 
-	.main article h2 {
-	    color: 	   		#759CBF;
-	    font-size: 		1.3em;
-	    text-transform: capitalize;
-	}
-	
-	.main article p {
-	    padding: 0 1em;
-	}
-	
-	.main article ul {
-		margin: 0;
-		list-style: none;
-	}
-	
-	.main article a, a:hover, a:visited {
-    	text-decoration: none;
-	}
-	
-	/* used for page under construction */
-	.main article .construction {
-		font-size: 1.5em;
-		margin: 2em;
-	}
-	
-	
-	/**
-	 * 	Main aside
-	 */
-	
-	.main aside {
-	    padding: 0px 5% 10px;
-	}
-	
-	.main aside h3 {
-	    color: #759CBF;
-	    text-transform: capitalize;
-	}
-	.main aside p {
-		font-size: 1em;
-	    color:   #fff;		
-	}
-	.main aside span {
-		text-transform: capitalize;
-	}
+/**
+ * 	Main article content
+ */
+
+.main section {
+	margin: 0 0 2em;
+}
+
+.main article {
+    padding: 0em 1em;
+}
+
+.main article h2 {
+    color: 	   		#759CBF;
+    font-size: 		1.3em;
+    text-transform: capitalize;
+}
+
+.main article p {
+    padding: 0 1em;
+}
+
+.main article ul {
+	margin: 0;
+	list-style: none;
+}
+
+.main article a, a:hover, a:visited {
+	text-decoration: none;
+}
+
+/* used for page under construction */
+.main article .construction {
+	font-size: 1.5em;
+	margin: 2em;
+}
+
+/* Main content */
+.main .content {
+	float: left;
+	width: 75%;
+}
+
+
+/**
+ * 	Main aside
+ */
+
+.main aside {
+    float: left;
+    width: 25%;
+}
+
+.main aside h3 {
+    color: #759CBF;
+    text-transform: capitalize;
+}
+.main aside p {
+	font-size: 1em;
+    color:   #fff;		
+}
+.main aside span {
+	text-transform: capitalize;
+}
 	
 /* ==============
    Footer
@@ -163,17 +178,6 @@ nav {
 footer {
     color: white;
 }
-
-
-/* ==========================================================================
-   Page specific styles
-   ========================================================================== */
-
-/* ==============
-   Conact
-   ============== */
-  
-  
 	
 
 
@@ -181,80 +185,41 @@ footer {
    Media Queries
    ========================================================================== */
 
-@media only screen and (min-width: 480px) {
-
-/* ====================
-    INTERMEDIATE: Menu
-   ==================== */
-
-    nav a {
-        margin-bottom: 0;
-    }
-
-    nav li:first-child a {
-        margin-left: 0;
-    }
-
-    nav li:last-child a {
-        margin-right: 0;
-    }
-
-/* ========================
-    INTERMEDIATE: IE Fixes
-   ======================== */
-
-    nav ul li {
-        display: inline;
-    }
-
-    .oldie nav a {
-        margin: 0 0.7%;
-    }
+@media only screen and (max-width: 480px) {
+	nav li {
+		display: list-item;
+	}
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (max-width: 750px) {
 
-/* ====================
-    WIDE: CSS3 Effects
-   ==================== */
+	nav li {
 
-    .header-container,
-    .main aside {
-    	/*
-        -webkit-box-shadow: 0 5px 10px #aaa;
-           -moz-box-shadow: 0 5px 10px #aaa;
-                box-shadow: 0 5px 10px #aaa;
-                */
-    }
+	}
+	
+	.main .content {
+		width: 100%;
+	}
+	
+	.main aside {
+		width: 100%;
+	}
+	
+	.main aside .content {
+		margin: 0 1em;
+	}
 
-
-
-/* ============
-    WIDE: Main
-   ============ */
-
-    .main article {
-        float: left;
-        width: 57%;
-    }
-
-    .main aside {
-        float: right;
-        width: 28%;
-    }
 }
-
+/*
 @media only screen and (min-width: 1140px) {
-
-/* ===============
-    Maximal Width
-   =============== */
-
-    .wrapper {
-        width: 1026px; /* 1140px - 10% for margins */
-        margin: 0 auto;
-    }
-}
+	nav {
+		margin-top: 1em;
+	}	
+	nav li {
+		padding: 2em;
+		display: inline;
+	}
+}*/
 
 /* ==========================================================================
    Helper clases

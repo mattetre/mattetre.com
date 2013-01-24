@@ -6,12 +6,16 @@ ContentView = Backbone.View.extend({
     },
 
     render:function (path) {
-		var that = this;
+		var self = this;
 		
 		// download the template from the template directory
     	$.get("page/" + path, function(template){
-    		// set the el to the downloaded template
-      		that.$el.html(template);
+    		// fade out the div
+    		self.$el.fadeOut("fast", function() {
+    			// when the fade out complete run callback to set content and fade in
+      			self.$el.html(template);
+      			self.$el.fadeIn("fast");
+    		});
     	});
 	    return this;
     }

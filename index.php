@@ -7,7 +7,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
 
-        <link rel="stylesheet" href="css/normalize.min.css">
+		<link rel="stylesheet" href="css/normalize.min.css">
         <link rel="stylesheet" href="css/main.css">
 
         <script src="js/vendor/modernizr-2.6.1-respond-1.1.0.min.js"></script>
@@ -20,47 +20,50 @@
 
     </head>
     
-    <body class="index">
+    <body>
         <header class="clearfix">
             <div class="title">mattetre.com</div>
             <nav>
                 <ul>
-                    <li><a href="#!page/projects.html" class="nav-item nav-projects">projects</a></li>
-                    <li><a href="#!page/blog.html" class="nav-item nav-blog">blog</a></li>
-                    <li><a href="#!page/about.html" class="nav-item nav-about">about</a></li>
-                    <li><a href="#!page/contact.html" class="nav-item nav-contact">contact</a></li>
+                    <li><a href="#!page/projects.html" class="nav-item">projects</a></li>
+                    <li><a href="#!page/blog.html" class="nav-item">blog</a></li>
+                    <li><a href="#!page/about.html" class="nav-item">about</a></li>
+                    <li><a href="#!page/contact.html" class="nav-item">contact</a></li>
                 </ul>
             </nav>
         </header>
 
-        <div class="main-container">
-            <div class="main wrapper clearfix">
+        <div>
+            <div class="main clearfix">
             	
-				<div id="dynamic-content">
+				<div id="dynamic-content" class="content">
 					<?php
-					  // get the _escaped_fragment_ parameter
-					  $escapedfragment = $_GET['_escaped_fragment_'];
-					  // if the escaped fragment is set then load up static page in PHP
-					  if (isset($escapedfragment)) {
-					  	include($escapedfragment);
-					  } else {
-					  	// Otherwise use javascript to load and interact with page
-						echo("<script src='js/app/contentview.js'></script>");
-						echo("<script src='js/app/app.js'></script>");
-					  }
+						/* This is used to setup static page references for search engine crawling */
+						
+						// get the _escaped_fragment_ parameter
+						$escapedfragment = $_GET['_escaped_fragment_'];
+						// if the escaped fragment is set then load up static page in PHP
+						if (isset($escapedfragment)) {
+							include($escapedfragment);
+						} else {
+							// Otherwise use javascript to load and interact with page
+							echo("<script src='js/app/contentview.js'></script>");
+							echo("<script src='js/app/app.js'></script>");
+						}
 					?>
-	
 				</div>
 
                 <aside>
-                    <h3>recent activity</h3>
-                    <p>Working on updating this site...</p>
-                    <br>
-                    <span>todo:</span>
-                    <ul class="todo">
-                    	<li>Make web page responsive and viewable on mobile devices</li>
-                    	<li>Create a simple blogging system</li>
-                    </ul>
+                	<div class="content">
+	                    <h3>recent activity</h3>
+	                    <p>Working on updating this site...</p>
+	                    <br>
+	                    <span>todo:</span>
+	                    <ul class="todo">
+	                    	<li>Make web page responsive and viewable on mobile devices</li>
+	                    	<li>Create a simple blogging system</li>
+	                    </ul>
+                    </div>
                 </aside>
 
             </div> <!-- #main -->
