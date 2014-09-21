@@ -18,3 +18,10 @@ build:
           echo "node version $(node -v) running"
           echo "npm version $(npm -v) running"
 
+deploy:
+  steps:
+    - duleorlovic/ftp-deploy:
+        cwd: dist/
+        destination: ftp://ftp.mattetre.com/public_html/mattetre.com
+        username: $FTP_USERNAME
+        password: $FTP_PASSWORD
