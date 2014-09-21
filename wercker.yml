@@ -10,10 +10,18 @@ build:
     - grunt:
         tasks: build
 
+# deploy:
+#   steps:
+#     - duleorlovic/ftp-deploy:
+#         cwd: dist/
+#         destination: ftp.mattetre.com
+#         username: $FTP_USERNAME
+#         password: $FTP_PASSWORD
+
 deploy:
   steps:
-    - duleorlovic/ftp-deploy:
+    - wercker-labs/azure-ftp-deploy:
         cwd: dist/
-        destination: ftp.mattetre.com
+        publish-url: $FTP_URL
         username: $FTP_USERNAME
         password: $FTP_PASSWORD
