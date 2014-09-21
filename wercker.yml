@@ -14,6 +14,6 @@ deploy:
   steps:
     - duleorlovic/ftp-deploy:
         cwd: dist/
-        destination: ftp://ftp.mattetre.com/public_html/mattetre.com
+        destination: ftp.mattetre.com/public_html/mattetre.com
         username: $FTP_USERNAME
         password: $FTP_PASSWORD
