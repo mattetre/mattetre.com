@@ -1,22 +1,14 @@
-box: wercker/nodejs
-# Build definition
+box: olger/box-yeoman
+
 build:
   # The steps that will be executed on build
   steps:
     # A step that executes `npm install` command
     - npm-install
     # A step that executes `npm test` command
-    - npm-test
+    - olger/yeoman-bower-install
     - grunt:
-        tasks: default
-
-    # A custom script step, name value is used in the UI
-    # and the code value contains the command that get executed
-    - script:
-        name: echo nodejs information
-        code: |
-          echo "node version $(node -v) running"
-          echo "npm version $(npm -v) running"
+        tasks: build
 
 deploy:
   steps:
