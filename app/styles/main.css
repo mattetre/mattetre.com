@@ -25,6 +25,15 @@ a {
     background-size: cover;
 }
 
+div {
+    font-family: 'Lato', sans-serif;
+}
+
+.font {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+}
+
 .logo {
     font-family: 'Lato', sans-serif;
     font-weight: 100;
@@ -62,6 +71,10 @@ a {
 
 .container {
     background: #eeeeee;
+}
+
+.center {
+    text-align: center;
 }
 
 .container-narrow > hr {
