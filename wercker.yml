@@ -24,7 +24,7 @@ deploy:
         key_id: $AWS_KEY_ID
         key_secret: $AWS_KEY_SECRET
         bucket_url: $AWS_BUCKET
-        source_dir: dist/
+        source_dir: $SOURCE
     # - wercker-labs/azure-ftp-deploy:
         # cwd: dist/
         # publish-url: $FTP_URL
