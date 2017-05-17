@@ -1,15 +1,11 @@
 @import url(http://fonts.googleapis.com/css?family=Lato:100,300,400);
 
-body {
-    padding-top: 6em;
-}
-
 a {
     color: #000;
 }
 
 .full-background {
-    background: url(background.jpg) no-repeat center center fixed; 
+    background: url(background1.jpg) no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -40,6 +36,8 @@ div {
 .container {
     background: #eeeeee;
     border: 1px solid black;
+    height: 250px;
+    margin-top: 12em;
 }
 
 .center {
