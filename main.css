@@ -1,0 +1,53 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400);
+
+body {
+    padding-top: 6em;
+}
+
+a {
+    color: #000;
+}
+
+.full-background {
+    background: url(background.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+div {
+    font-family: 'Lato', sans-serif;
+}
+
+.font {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+}
+
+.logo {
+    font-family: 'Lato', sans-serif;
+    font-weight: 100;
+    font-size: 5em;
+    text-transform: uppercase;
+}
+
+.sites {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.container {
+    background: #eeeeee;
+    border: 1px solid black;
+}
+
+.center {
+    text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+    .container {
+        max-width: 730px;
+    }
+}
